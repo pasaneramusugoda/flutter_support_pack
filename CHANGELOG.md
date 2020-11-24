@@ -1,3 +1,6 @@
-## [0.0.1] - TODO: Add release date.
+# Changelog
 
-* TODO: Describe initial release.
+## [0.0.1] - 2020/11/24
+
+* initial release
+Including first sub package Log

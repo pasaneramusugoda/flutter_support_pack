@@ -1,0 +1,18 @@
+# Check out https://docs.codemagic.io/getting-started/yaml/ for more information
+
+workflows:
+    flutter-package:
+        name: flutter_support_pack
+        environment:
+            flutter: stable
+        triggering:
+            events:
+                - tag
+            branch_patterns:
+                - pattern: 'master'
+                  include: true
+                  source: true
+            cancel_previous_builds: false
+        scripts:
+            - flutter packages pub get
+            - pub publish
