@@ -15,4 +15,3 @@ workflows:
             cancel_previous_builds: false
         scripts:
             - flutter packages pub get
-            - pub publish
