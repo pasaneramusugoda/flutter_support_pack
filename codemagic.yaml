@@ -15,3 +15,6 @@ workflows:
             cancel_previous_builds: false
         scripts:
             - flutter packages pub get
+            - echo $CREDENTIALS | base64 --decode > "$FLUTTER_ROOT/.pub-cache/credentials.json"
+            - flutter pub publish --dry-run
+            - flutter pub publish -f
