@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.2] - 2020/11/25
+
+* updates
+Structural update
+Documentation update
+
 ## [0.0.1+1] - 2020/11/25
 
 * fixes

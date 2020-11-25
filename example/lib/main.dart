@@ -39,13 +39,13 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -63,12 +63,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  static const String TAG = 'MyHomePageState';
+  static const String tag = 'MyHomePageState';
 
   int _counter = 0;
 
   void _incrementCounter() {
-    Log.d(TAG, '$_counter', references: ['_incrementCounter', 'begin']);
+    Log.d(tag, '$_counter', references: ['_incrementCounter', 'begin']);
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -77,21 +77,20 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
     });
-    Log.d(TAG, '$_counter', references: ['_incrementCounter', 'ended']);
+    Log.d(tag, '$_counter', references: ['_incrementCounter', 'ended']);
 
     try {
       _validateCounter();
-    } catch (e) {
-      Log.e(TAG, '$_counter', references: ['_incrementCounter'], exception: e);
+    } on Exception catch (e) {
+      Log.e(tag, '$_counter', references: ['_incrementCounter'], exception: e);
     }
   }
-
 
   @override
   void initState() {
     super.initState();
 
-    Log.i(TAG, 'initialized', references: ['initState']);
+    Log.i(tag, 'initialized', references: ['initState']);
   }
 
   @override
@@ -128,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'You have pushed the button this many times:',
             ),
             Text(
@@ -141,16 +140,19 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
   void _validateCounter() {
-    if(_counter > 5)
-      Log.w(TAG, 'about to hit the level => $_counter', references: ['_incrementCounter']);
+    if (_counter > 5) {
+      Log.w(tag, 'about to hit the level => $_counter',
+          references: ['_incrementCounter']);
+    }
 
-    if(_counter >= 10)
-      throw 'level reached';
+    if (_counter >= 10) {
+      throw Exception('level reached');
+    }
   }
 }
