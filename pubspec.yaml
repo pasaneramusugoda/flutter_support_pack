@@ -1,6 +1,6 @@
 name: flutter_support_pack
 description: Commanly used features in on package to reduce number of imports and dependancy issues
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/pasaneramusugoda/flutter_support_pack
 
 environment:
@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   firebase_core: ^0.5.2
   firebase_crashlytics: ^0.2.3
+  intl: ^0.16.1
 
 dev_dependencies:
   flutter_test:
