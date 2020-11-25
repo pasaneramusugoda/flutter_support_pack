@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.4] - 2020/11/25
+
+* updates
+Currency class added
+
 ## [0.0.3] - 2020/11/25
 
 * updates

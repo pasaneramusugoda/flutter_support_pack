@@ -12,10 +12,16 @@ class Currency {
     _instance = this;
   }
 
+  /// Initialize [Currency] instance
+  ///
+  /// * [locale] : If not specified, it will use the current default locale.
+  /// * [name] : If specified, the currency with that ISO 4217 name will be used
+  /// * [symbol] : If [symbol] provided, then [name] will be ignored.
+  /// * [decimalDigits] : Sets number of decimal places. Default value is 2.
   static void init({
     String locale,
-    String name = 'LKR',
-    String symbol = 'LKR ',
+    String name,
+    String symbol,
     int decimalDigits = 2,
   }) {
     locale ??= Intl.defaultLocale;
