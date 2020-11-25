@@ -22,11 +22,85 @@ import 'package:flutter_support_pack/flutter_support_pack.dart';
 
 ## Packages (more to come)
 
+## Validators
+
+Validators api provide you to validate form fields as well as other text validations.
+
+### validateRequired
+
+Only you need to pass the value that needs be get validated.
+
+### validateEmail
+
+Here you can pass an string value which needs to be get validated as an email.
+
+### validateMobileNumber
+
+Pass a string value and other parameeters as per requirement get validated.
+
+#### Properties
+
+|Property|Type|Default Value|Description|
+|:---|:---|:---|:---|
+|value|String|null|The phone number. By default validate for SL phone numbers. Use pattern for any custom numbers|
+|allowLandNumber|bool|false|Enable land number validation. Only avaiable for SL country format|
+|optional|bool|false|Sets the field as an optional|
+|pattern|String|null|Pass a custom pattern to validate|
+
+### validateNIC
+
+Pass a string value and this method only works for SL.
+
+### validateConfirmPassword
+
+Validates current field value against provided value.
+
+#### Properties
+
+|Property|Type|Default Value|Description|
+|:---|:---|:---|:---|
+|value|String|null|Field password value|
+|password|String|null|Existing password|
+
+#### Example Useage
+
+```
+TextFormField(
+  controller: newPasswordController,
+  focusNode: focusNewPassword,
+  keyboardType: TextInputType.visiblePassword,
+  obscureText: true,
+  maxLines: 1,
+  textInputAction: TextInputAction.next,
+  validator: (value) =>
+      Validators.validateConfirmPassword(
+    value,
+    [currentPassword],
+  ),
+  decoration: InputDecoration(
+    labelText: 'New Password',
+  ),
+),
+```
+
+### validatePinCode
+
+Validates a pin code.
+
+#### Properties
+
+|Property|Type|Default Value|Description|
+|:---|:---|:---|:---|
+|value|String|null|Pin code value|
+|length|int|6|Define the length of the pin code|
+
+#### **SL means Sri Lanka**
+
 ## Log
 
 Log api provide you the easy way to log your info, debug, warn and error logs. Also capable of log to flutter crashlytics.
 
-### Property
+### Properties
 
 |Property|Type|Default Value|Description|
 |:---|:---|:---|:---|

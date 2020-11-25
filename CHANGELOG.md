@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.3] - 2020/11/25
+
+* updates
+Valators class added
+
 ## [0.0.2+1] - 2020/11/25
 
 * fixes
