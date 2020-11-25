@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.2+1] - 2020/11/25
+
+* fixes
+Package referencing fixes
+
 ## [0.0.2] - 2020/11/25
 
 * updates
