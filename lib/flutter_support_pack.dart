@@ -1,3 +1,3 @@
 library flutter_support_pack;
 
-export 'packages/log/log.dart';
+export 'package:flutter_support_pack/packages/log/log.dart';

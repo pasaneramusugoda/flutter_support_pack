@@ -10,6 +10,12 @@ class Log {
   static bool _enableFirebaseCrashlyticsInDebug;
   static bool _enableFirebaseCrashlyticsInRelease;
 
+  /// Initialize [Log] instance
+  ///
+  /// [logInDebugMode] Enable logging in debug mode ([kDebugMode]). Default value is true.
+  /// [logInReleaseMode] Enable logging in release mode ([kReleaseMode]). Default value is false.
+  /// [enableFirebaseCrashlyticsInDebug] Enable Firebase Crashlytics logging in debug mode ([kDebugMode]). Default value is false.
+  /// [enableFirebaseCrashlyticsInRelease] Enable Firebase Crashlytics logging in release mode ([kReleaseMode]). Default value is false.
   static void init({
     bool logInDebugMode = true,
     bool logInReleaseMode = false,
@@ -31,6 +37,11 @@ class Log {
     );
   }
 
+  /// Logging information
+  ///
+  /// [tag] page name or class name of the event origins
+  /// [msg] log message
+  /// [references] more event references such as method name or function name for further identification
   static void i(String tag, String msg, {List<String> references}) {
     var name = "🤠 INFO: $tag" +
         (references != null || references.isNotEmpty
@@ -39,6 +50,11 @@ class Log {
     _log(name, msg);
   }
 
+  /// Logging debug
+  ///
+  /// [tag] page name or class name of the event origins
+  /// [msg] log message
+  /// [references] more event references such as method name or function name for further identification
   static void d(String tag, String msg, {List<String> references}) async {
     var name = "🚧 DEBUG: $tag" +
         (references != null || references.isNotEmpty
@@ -47,6 +63,13 @@ class Log {
     _log(name, msg);
   }
 
+  /// Logging warning
+  ///
+  /// [tag] page name or class name of the event origins
+  /// [msg] log message
+  /// [references] more event references such as method name or function name for further identification
+  /// [exception] an exception detail
+  /// [stackTrace] if available pass. This is important when you using firebase crashlytics trace back the error
   static void w(String tag, String msg,
       {List<String> references,
       dynamic exception,
@@ -58,6 +81,13 @@ class Log {
     _log(name, msg, exception: exception, stackTrace: stackTrace);
   }
 
+  /// Logging an error
+  ///
+  /// [tag] page name or class name of the event origins
+  /// [msg] log message
+  /// [references] more event references such as method name or function name for further identification
+  /// [exception] an exception detail
+  /// [stackTrace] if available pass. This is important when you using firebase crashlytics trace back the error
   static void e(String tag, String msg,
       {List<String> references,
       dynamic exception,
