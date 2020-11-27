@@ -145,7 +145,7 @@ class Validators {
   static String validatePinCode(String value,
       {int length = 6, bool numbersOnly = true}) {
     if (value.isNotEmpty && (value.length == length)) {
-      if (numbersOnly && !value.contains(RegExp(r'[\w]'))) {
+      if (numbersOnly && !value.contains(RegExp(r'[^0-9]'))) {
         return null;
       } else {
         return 'Only numbers are allowed';
