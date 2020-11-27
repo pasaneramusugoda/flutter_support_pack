@@ -141,9 +141,15 @@ class Validators {
   ///
   /// * [value] : pin code
   /// * [length] : pin code length
-  static String validatePinCode(String value, [int length = 6]) {
+  /// * [numbersOnly] : allow only numbers as the pin code
+  static String validatePinCode(String value,
+      {int length = 6, bool numbersOnly = true}) {
     if (value.isNotEmpty && (value.length == length)) {
-      return null;
+      if (numbersOnly && !value.contains(RegExp(r'[\w]'))) {
+        return null;
+      } else {
+        return 'Only numbers are allowed';
+      }
     } else if (value.isEmpty) {
       return 'This filed is required';
     } else {
