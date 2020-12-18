@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.5] - 2020/12/18
+
+* updates
+Number and string extensions on currency or numbers
+Added numbers only validation to pin code validator
+An extension for string to get color from hex value
+Documentation updates
+
 ## [0.0.4] - 2020/11/25
 
 * updates
@@ -8,7 +16,7 @@ Currency class added
 ## [0.0.3] - 2020/11/25
 
 * updates
-Valators class added
+Validators class added
 
 ## [0.0.2+1] - 2020/11/25
 
