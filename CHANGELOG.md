@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.5+1] - 2020/12/18
+
+* fix
+Forgot to export :)
+
 ## [0.0.5] - 2020/12/18
 
 * updates
