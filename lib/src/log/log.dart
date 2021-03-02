@@ -52,7 +52,7 @@ class Log {
   /// [msg] log message
   /// [references] more event references such as\n method name or function name for further identification
   static void i(String tag, String msg, {List<String> references}) {
-    final ref = references != null || references.isNotEmpty
+    final ref = references != null && references.isNotEmpty
         ? ': ${references?.join(' => ')}'
         : '';
     final name = '🤠 INFO: $tag $ref';
@@ -65,7 +65,7 @@ class Log {
   /// [msg] log message
   /// [references] more event references such as\n method name or function name for further identification
   static void d(String tag, String msg, {List<String> references}) async {
-    final ref = references != null || references.isNotEmpty
+    final ref = references != null && references.isNotEmpty
         ? ': ${references?.join(' => ')}'
         : '';
     final name = '🚧 DEBUG: $tag $ref';
@@ -81,7 +81,7 @@ class Log {
   /// [stackTrace] if available pass.\nThis is important when you using firebase crashlytics trace back the error
   static void w(String tag, String msg,
       {List<String> references, exception, StackTrace stackTrace}) async {
-    final ref = references != null || references.isNotEmpty
+    final ref = references != null && references.isNotEmpty
         ? ': ${references?.join(' => ')}'
         : '';
     final name = '❗ WARN: $tag $ref';
@@ -97,7 +97,7 @@ class Log {
   /// [stackTrace] if available pass.\nThis is important when you using firebase crashlytics trace back the error
   static void e(String tag, String msg,
       {List<String> references, exception, StackTrace stackTrace}) async {
-    final ref = references != null || references.isNotEmpty
+    final ref = references != null && references.isNotEmpty
         ? ': ${references?.join(' => ')}'
         : '';
     final name = '🚨 ERROR: $tag $ref';
