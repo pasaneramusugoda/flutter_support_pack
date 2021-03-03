@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.5+2] - 2021/03/03
+
+* fix
+Log error fix
+Library updates
+
 ## [0.0.5+1] - 2020/12/18
 
 * fix
