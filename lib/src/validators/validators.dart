@@ -2,7 +2,7 @@ class Validators {
   /// Validate given value
   ///
   /// * [value] : any value
-  static String validateRequired(value) {
+  static String? validateRequired(value) {
     return value == null || (value is String && value.trim().isEmpty)
         ? 'This filed is required'
         : null;
@@ -11,7 +11,7 @@ class Validators {
   /// Validate given email address
   ///
   /// * [value] : email address
-  static String validateEmail(String value) {
+  static String? validateEmail(String value) {
     const pattern =
         r'^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)';
     final RegExp regex = RegExp(pattern);
@@ -33,8 +33,8 @@ class Validators {
   /// * [optional] : sets if field is not required
   /// * [pattern] : for non SL country mobile number validation,
   /// automatically omit spaces
-  static String validateMobileNumber(String value,
-      {bool allowLandNumber = false, bool optional = false, String pattern}) {
+  static String? validateMobileNumber(String value,
+      {bool allowLandNumber = false, bool optional = false, String? pattern}) {
     if (pattern == null) {
       const pattern1 = r'^[0]?7[0-9]{8}$';
       const pattern2 = r'^[0-9]{9}$';
@@ -88,7 +88,7 @@ class Validators {
   /// Validate given NIC, this method only for SL
   ///
   /// * [value] : NIC number
-  static String validateNIC(String value) {
+  static String? validateNIC(String value) {
     const pattern1 = r'^[0-9]{9}[vV]$';
     const pattern2 = r'^[0-9]{12}$';
     final RegExp regex1 = RegExp(pattern1);
@@ -127,7 +127,7 @@ class Validators {
   ///   ),
   /// ),
   /// ```
-  static String validateConfirmPassword(String value, String password) {
+  static String? validateConfirmPassword(String value, String password) {
     if (value.isNotEmpty && (password.isNotEmpty && value == password)) {
       return null;
     } else if (value.isEmpty) {
@@ -142,7 +142,7 @@ class Validators {
   /// * [value] : pin code
   /// * [length] : pin code length
   /// * [numbersOnly] : allow only numbers as the pin code
-  static String validatePinCode(String value,
+  static String? validatePinCode(String value,
       {int length = 6, bool numbersOnly = true}) {
     if (value.isNotEmpty && (value.length == length)) {
       if (numbersOnly && !value.contains(RegExp(r'[^0-9]'))) {

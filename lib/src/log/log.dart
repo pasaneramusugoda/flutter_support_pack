@@ -4,7 +4,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 
 class Log {
-  static Log _instance;
+  static Log? _instance;
   final bool _logInDebugMode;
   final bool _logInReleaseMode;
   final bool _enableFirebaseCrashlyticsInDebug;
@@ -51,9 +51,9 @@ class Log {
   /// [tag] page name or class name of the event origins
   /// [msg] log message
   /// [references] more event references such as\n method name or function name for further identification
-  static void i(String tag, String msg, {List<String> references}) {
+  static void i(String tag, String msg, {List<String>? references}) {
     final ref = references != null && references.isNotEmpty
-        ? ': ${references?.join(' => ')}'
+        ? ': ${references.join(' => ')}'
         : '';
     final name = '🤠 INFO: $tag $ref';
     _log(name, msg);
@@ -64,9 +64,9 @@ class Log {
   /// [tag] page name or class name of the event origins
   /// [msg] log message
   /// [references] more event references such as\n method name or function name for further identification
-  static void d(String tag, String msg, {List<String> references}) async {
+  static void d(String tag, String msg, {List<String>? references}) async {
     final ref = references != null && references.isNotEmpty
-        ? ': ${references?.join(' => ')}'
+        ? ': ${references.join(' => ')}'
         : '';
     final name = '🚧 DEBUG: $tag $ref';
     _log(name, msg);
@@ -80,9 +80,9 @@ class Log {
   /// [exception] an exception detail
   /// [stackTrace] if available pass.\nThis is important when you using firebase crashlytics trace back the error
   static void w(String tag, String msg,
-      {List<String> references, exception, StackTrace stackTrace}) async {
+      {List<String>? references, exception, StackTrace? stackTrace}) async {
     final ref = references != null && references.isNotEmpty
-        ? ': ${references?.join(' => ')}'
+        ? ': ${references.join(' => ')}'
         : '';
     final name = '❗ WARN: $tag $ref';
     _log(name, msg, exception: exception, stackTrace: stackTrace);
@@ -96,25 +96,25 @@ class Log {
   /// [exception] an exception detail
   /// [stackTrace] if available pass.\nThis is important when you using firebase crashlytics trace back the error
   static void e(String tag, String msg,
-      {List<String> references, exception, StackTrace stackTrace}) async {
+      {List<String>? references, exception, StackTrace? stackTrace}) async {
     final ref = references != null && references.isNotEmpty
-        ? ': ${references?.join(' => ')}'
+        ? ': ${references.join(' => ')}'
         : '';
     final name = '🚨 ERROR: $tag $ref';
     _log(name, msg, exception: exception, stackTrace: stackTrace);
   }
 
   static void _log(String name, String msg,
-      {exception, StackTrace stackTrace}) async {
+      {exception, StackTrace? stackTrace}) async {
     _checkInstance();
 
-    if ((_instance._logInDebugMode && kDebugMode) ||
-        (_instance._logInReleaseMode && kReleaseMode)) {
+    if ((_instance!._logInDebugMode && kDebugMode) ||
+        (_instance!._logInReleaseMode && kReleaseMode)) {
       developer.log(msg, name: name, error: exception, stackTrace: stackTrace);
     }
 
-    if ((_instance._enableFirebaseCrashlyticsInDebug && kDebugMode) ||
-        (_instance._enableFirebaseCrashlyticsInRelease && kReleaseMode)) {
+    if ((_instance!._enableFirebaseCrashlyticsInDebug && kDebugMode) ||
+        (_instance!._enableFirebaseCrashlyticsInRelease && kReleaseMode)) {
       await FirebaseCrashlytics.instance.log('$name => $msg');
 
       if (exception != null || stackTrace != null) {

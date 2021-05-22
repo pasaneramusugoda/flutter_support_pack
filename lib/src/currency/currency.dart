@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 
 class Currency {
-  static Currency _instance;
+  static Currency? _instance;
   final NumberFormat _currency;
   final NumberFormat _currencyCompact;
   final NumberFormat _currencySimple;
@@ -19,9 +19,9 @@ class Currency {
   /// * [symbol] : If [symbol] provided, then [name] will be ignored.
   /// * [decimalDigits] : Sets number of decimal places. Default value is 2.
   static void init({
-    String locale,
-    String name,
-    String symbol,
+    String? locale,
+    String? name,
+    String? symbol,
     int decimalDigits = 2,
   }) {
     locale ??= Intl.defaultLocale;
@@ -65,41 +65,41 @@ class Currency {
 
   static String format(num number) {
     _checkInstance();
-    return _instance._currency.format(number);
+    return _instance!._currency.format(number);
   }
 
   static String formatCompact(num number) {
     _checkInstance();
-    return _instance._currencyCompact.format(number);
+    return _instance!._currencyCompact.format(number);
   }
 
   static String formatSimple(num number) {
     _checkInstance();
-    return _instance._currencySimple.format(number);
+    return _instance!._currencySimple.format(number);
   }
 
   static String formatCompactSimple(num number) {
     _checkInstance();
-    return _instance._currencyCompactSimple.format(number);
+    return _instance!._currencyCompactSimple.format(number);
   }
 
   static num parse(String value) {
     _checkInstance();
-    return _instance._currency.parse(value);
+    return _instance!._currency.parse(value);
   }
 
   static num parseCompact(String value) {
     _checkInstance();
-    return _instance._currencyCompact.parse(value);
+    return _instance!._currencyCompact.parse(value);
   }
 
   static num parseSimple(String value) {
     _checkInstance();
-    return _instance._currencySimple.parse(value);
+    return _instance!._currencySimple.parse(value);
   }
 
   static num parseCompactSimple(String value) {
     _checkInstance();
-    return _instance._currencyCompactSimple.parse(value);
+    return _instance!._currencyCompactSimple.parse(value);
   }
 }
