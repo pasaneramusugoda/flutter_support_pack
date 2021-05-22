@@ -11,13 +11,13 @@ class Validators {
   /// Validate given email address
   ///
   /// * [value] : email address
-  static String? validateEmail(String value) {
+  static String? validateEmail(String? value) {
     const pattern =
         r'^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)';
     final RegExp regex = RegExp(pattern);
-    if (value.isNotEmpty && regex.hasMatch(value)) {
+    if (value != null && value.isNotEmpty && regex.hasMatch(value)) {
       return null;
-    } else if (value.isEmpty) {
+    } else if (value == null || value.isEmpty) {
       return 'This filed is required';
     } else {
       return 'Please enter valid email';
@@ -33,7 +33,7 @@ class Validators {
   /// * [optional] : sets if field is not required
   /// * [pattern] : for non SL country mobile number validation,
   /// automatically omit spaces
-  static String? validateMobileNumber(String value,
+  static String? validateMobileNumber(String? value,
       {bool allowLandNumber = false, bool optional = false, String? pattern}) {
     if (pattern == null) {
       const pattern1 = r'^[0]?7[0-9]{8}$';
@@ -43,18 +43,21 @@ class Validators {
       final RegExp regex2 = RegExp(pattern2);
       final RegExp regex3 = RegExp(pattern3);
       if (allowLandNumber) {
-        if ((value.isNotEmpty && value.length == 9 && regex2.hasMatch(value)) ||
-            (value.isEmpty && optional)) {
+        if ((value != null &&
+                value.isNotEmpty &&
+                value.length == 9 &&
+                regex2.hasMatch(value)) ||
+            ((value == null || value.isEmpty) && optional)) {
           return null;
-        } else if (value.isEmpty) {
+        } else if (value == null || value.isEmpty) {
           return 'This filed is required';
         } else {
           return 'Please enter valid land number';
         }
       } else {
-        if (value.isEmpty && optional) {
+        if ((value == null || value.isEmpty) && optional) {
           return null;
-        } else if (value.isEmpty) {
+        } else if (value == null || value.isEmpty) {
           return 'This filed is required';
         } else if (value.isNotEmpty &&
             (value.length == 9 ||
@@ -73,9 +76,9 @@ class Validators {
       }
     } else {
       final RegExp regex = RegExp(pattern);
-      if (value.isEmpty && optional) {
+      if ((value == null || value.isEmpty) && optional) {
         return null;
-      } else if (value.isEmpty) {
+      } else if (value == null || value.isEmpty) {
         return 'This filed is required';
       } else if (regex.hasMatch(value)) {
         return null;
@@ -88,15 +91,16 @@ class Validators {
   /// Validate given NIC, this method only for SL
   ///
   /// * [value] : NIC number
-  static String? validateNIC(String value) {
+  static String? validateNIC(String? value) {
     const pattern1 = r'^[0-9]{9}[vV]$';
     const pattern2 = r'^[0-9]{12}$';
     final RegExp regex1 = RegExp(pattern1);
     final RegExp regex2 = RegExp(pattern2);
-    if (value.isNotEmpty &&
+    if (value != null &&
+        value.isNotEmpty &&
         (regex1.hasMatch(value) || regex2.hasMatch(value))) {
       return null;
-    } else if (value.isEmpty) {
+    } else if (value == null || value.isEmpty) {
       return 'This filed is required';
     } else {
       return 'Please enter valid NIC number';
@@ -127,10 +131,12 @@ class Validators {
   ///   ),
   /// ),
   /// ```
-  static String? validateConfirmPassword(String value, String password) {
-    if (value.isNotEmpty && (password.isNotEmpty && value == password)) {
+  static String? validateConfirmPassword(String? value, String? password) {
+    if (value != null &&
+        value.isNotEmpty &&
+        (password != null && password.isNotEmpty && value == password)) {
       return null;
-    } else if (value.isEmpty) {
+    } else if (value == null || value.isEmpty) {
       return 'This filed is required';
     } else {
       return 'Passwords are not matching';
@@ -142,15 +148,15 @@ class Validators {
   /// * [value] : pin code
   /// * [length] : pin code length
   /// * [numbersOnly] : allow only numbers as the pin code
-  static String? validatePinCode(String value,
+  static String? validatePinCode(String? value,
       {int length = 6, bool numbersOnly = true}) {
-    if (value.isNotEmpty && (value.length == length)) {
+    if (value != null && value.isNotEmpty && (value.length == length)) {
       if (numbersOnly && !value.contains(RegExp(r'[^0-9]'))) {
         return null;
       } else {
         return 'Only numbers are allowed';
       }
-    } else if (value.isEmpty) {
+    } else if (value == null || value.isEmpty) {
       return 'This filed is required';
     } else {
       return 'Enter all $length digits';

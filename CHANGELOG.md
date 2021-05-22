@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.1+6] - 2021/05/23
+
+* fix
+Null safety fixes
+
 ## [0.1.0] - 2021/05/22
 
 * updates
