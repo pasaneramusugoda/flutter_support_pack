@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.2+7] - 2021/05/23
+
+* updates
+Added Date formatter
+
 ## [0.1.1+6] - 2021/05/23
 
 * fix
