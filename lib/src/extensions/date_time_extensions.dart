@@ -6,56 +6,56 @@ extension DateTimeExtension on DateTime {
 
   //region date
   //region date month year
-  String toDMY([String? separator]) =>
-      DateFormat('d${separator}M${separator}y').format(this);
+  String toDMY([String? separator1, String? separator2]) =>
+      DateFormat('d${separator1}M${separator1}y').format(this);
 
-  String toDdMmYy([String? separator]) =>
-      DateFormat('dd${separator}MM${separator}yy').format(this);
+  String toDdMmYy([String? separator1, String? separator2]) =>
+      DateFormat('dd${separator1}MM${separator2}yy').format(this);
 
-  String toDdMmYyyy([String? separator]) =>
-      DateFormat('dd${separator}MM${separator}yyyy').format(this);
+  String toDdMmYyyy([String? separator1, String? separator2]) =>
+      DateFormat('dd${separator1}MM${separator2}yyyy').format(this);
 
-  String toDdMmmYy([String? separator]) =>
-      DateFormat('dd${separator}MMM${separator}yy').format(this);
+  String toDdMmmYy([String? separator1, String? separator2]) =>
+      DateFormat('dd${separator1}MMM${separator2}yy').format(this);
 
-  String toDdMmmYyyy([String? separator]) =>
-      DateFormat('dd${separator}MMM${separator}yyyy').format(this);
+  String toDdMmmYyyy([String? separator1, String? separator2]) =>
+      DateFormat('dd${separator1}MMM${separator2}yyyy').format(this);
 
   //endregion
 
   //region month date year
-  String toMDY([String? separator]) =>
-      DateFormat('M${separator}d${separator}y').format(this);
+  String toMDY([String? separator1, String? separator2]) =>
+      DateFormat('M${separator1}d${separator2}y').format(this);
 
-  String toMmDdYy([String? separator]) =>
-      DateFormat('MM${separator}dd${separator}yy').format(this);
+  String toMmDdYy([String? separator1, String? separator2]) =>
+      DateFormat('MM${separator1}dd${separator2}yy').format(this);
 
-  String toMmDdYyyy([String? separator]) =>
-      DateFormat('MM${separator}dd${separator}yyyy').format(this);
+  String toMmDdYyyy([String? separator1, String? separator2]) =>
+      DateFormat('MM${separator1}dd${separator2}yyyy').format(this);
 
-  String toMmmDdYy([String? separator]) =>
-      DateFormat('MMM${separator}dd${separator}yy').format(this);
+  String toMmmDdYy([String? separator1, String? separator2]) =>
+      DateFormat('MMM${separator1}dd${separator2}yy').format(this);
 
-  String toMmmDdYyyy([String? separator]) =>
-      DateFormat('MMM${separator}dd${separator}yyyy').format(this);
+  String toMmmDdYyyy([String? separator1, String? separator2]) =>
+      DateFormat('MMM${separator1}dd${separator2}yyyy').format(this);
 
   //endregion
 
   //region year month date
-  String toYMD([String? separator]) =>
-      DateFormat('y${separator}M${separator}d').format(this);
+  String toYMD([String? separator1, String? separator2]) =>
+      DateFormat('y${separator1}M${separator2}d').format(this);
 
-  String toYyMmDd([String? separator]) =>
-      DateFormat('yy${separator}MM${separator}dd').format(this);
+  String toYyMmDd([String? separator1, String? separator2]) =>
+      DateFormat('yy${separator1}MM${separator2}dd').format(this);
 
-  String toYyyyMmDd([String? separator]) =>
-      DateFormat('yyyy${separator}MM${separator}dd').format(this);
+  String toYyyyMmDd([String? separator1, String? separator2]) =>
+      DateFormat('yyyy${separator1}MM${separator2}dd').format(this);
 
-  String toYyMmmDd([String? separator]) =>
-      DateFormat('yy${separator}MMM${separator}dd').format(this);
+  String toYyMmmDd([String? separator1, String? separator2]) =>
+      DateFormat('yy${separator1}MMM${separator2}dd').format(this);
 
-  String toYyyyMmmDd([String? separator]) =>
-      DateFormat('yyyy${separator}MMM${separator}dd').format(this);
+  String toYyyyMmmDd([String? separator1, String? separator2]) =>
+      DateFormat('yyyy${separator1}MMM${separator2}dd').format(this);
 //endregion
 //endregion
 
