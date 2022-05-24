@@ -2,7 +2,7 @@
 
 [![pub package](https://img.shields.io/pub/v/flutter_support_pack.svg)](https://pub.dartlang.org/packages/flutter_support_pack)
 
-Commanly used features in on package to reduce number of imports and dependancy issues
+Commanly used features in on package to reduce number of imports and dependency issues
 
 ## Usage
 
@@ -11,7 +11,7 @@ In the `pubspec.yaml` of your flutter project, add the following dependency:
 ```yaml
 dependencies:
   ...
-  flutter_support_pack: ^0.0.1
+  flutter_support_pack: ^1.0.0
 ```
 
 In your library add the following import:

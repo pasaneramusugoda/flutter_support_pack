@@ -1,19 +1,29 @@
 # Changelog
 
+## [1.0.0] - 2022/05/24
+
+### BREAKING CHANGES
+
+- Upgrade Flutter version to 3.0.0
+- Upgrade Dart version to 2.17.0
+
+### Updates
+
+- String can now parse to date directly
+- DateTime formatter default separator is a space(" ")
+- Android Studio Live Template settings to optimize coding for logs
+
 ## [0.1.3] - 2021/05/23
 
-* updates
-Introduced another param to Date formatter
+* updates Introduced another param to Date formatter
 
 ## [0.1.2+7] - 2021/05/23
 
-* updates
-Added Date formatter
+* updates Added Date formatter
 
 ## [0.1.1+6] - 2021/05/23
 
-* fix
-Null safety fixes
+* fix Null safety fixes
 
 ## [0.1.0] - 2021/05/22
 
