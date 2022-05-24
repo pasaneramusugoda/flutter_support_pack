@@ -11,4 +11,6 @@ extension StringExtension on String {
   num get currencySimple => Currency.parseSimple(this);
 
   num get currencyCompactSimple => Currency.parseCompactSimple(this);
+
+  DateTime? get dateTime => DateTime.tryParse(this);
 }
