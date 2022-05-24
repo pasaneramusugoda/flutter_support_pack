@@ -3,6 +3,20 @@ import 'dart:developer' as developer;
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 
+///
+/// Live Templates
+/// For Android Studio you can add live templates to speedup your coding
+///
+/// Setup:
+/// Step 1: Download live templates configuration settings.zip file
+/// Step 2: Choose File | Manage IDE Settings | Import Settings from the menu
+/// Step 3: Specify the path to the settings archive
+/// Step 4: In the Import Settings dialog, select the Live templates checkbox
+///         and click OK
+/// Step 5: Restart the IDE
+///
+/// For more info visit https://www.jetbrains.com/help/idea/sharing-live-templates.html#example
+///
 class Log {
   static Log? _instance;
   final bool _logInDebugMode;
