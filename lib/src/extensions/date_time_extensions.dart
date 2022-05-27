@@ -71,7 +71,30 @@ extension DateTimeExtension on DateTime {
   /// Default => 2022-05-24 => 2022 May 24
   String toYyyyMmmDd([String? separator1 = ' ', String? separator2 = ' ']) =>
       DateFormat('yyyy${separator1}MMM${separator2}dd').format(this);
+
 //endregion
 //endregion
 
+//region time
+  /// Result => 7:05 AM
+  String tohmma() => DateFormat('h:mm a').format(this);
+
+  /// Result => 7:05:12 AM
+  String tohmmssa() => DateFormat('h:mm:ss a').format(this);
+
+  /// Result => 07:05 AM
+  String tohhmma() => DateFormat('hh:mm a').format(this);
+
+  /// Result => 07:05:12 AM
+  String tohhmmssa() => DateFormat('hh:mm:ss a').format(this);
+
+  /// Result => 19:05
+  String toHmm() => DateFormat('H:mm').format(this);
+
+  /// Result => 19:05
+  String toHHmm() => DateFormat('HH:mm').format(this);
+
+  /// Result => 19:05:12
+  String toHHmmss() => DateFormat('HH:mm').format(this);
+//endregion time
 }
