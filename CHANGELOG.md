@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.1] - 2022/05/29
+
+### Updates
+
+- Handled existing functions for NULL Strings
+
 ## [1.0.0] - 2022/05/24
 
 ### BREAKING CHANGES
