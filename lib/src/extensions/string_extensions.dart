@@ -14,3 +14,23 @@ extension StringExtension on String {
 
   DateTime? get dateTime => DateTime.tryParse(this);
 }
+
+extension NullStringExtension on String? {
+  Color? get color =>
+      isNotNullOrEmpty ? Color(int.parse(this!.replaceAll('#', '0xff'))) : null;
+
+  num? get currency => isNotNullOrEmpty ? Currency.parse(this!) : null;
+
+  num? get currencyCompact =>
+      isNotNullOrEmpty ? Currency.parseCompact(this!) : null;
+
+  num? get currencySimple =>
+      isNotNullOrEmpty ? Currency.parseSimple(this!) : null;
+
+  num? get currencyCompactSimple =>
+      isNotNullOrEmpty ? Currency.parseCompactSimple(this!) : null;
+
+  DateTime? get dateTime => isNotNullOrEmpty ? DateTime.tryParse(this!) : null;
+
+  bool get isNotNullOrEmpty => this != null && (this?.isNotEmpty ?? false);
+}
