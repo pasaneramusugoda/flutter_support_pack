@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 
 class Currency {
-  static Currency? _instance;
+  static late Currency? _instance;
   final NumberFormat _currency;
   final NumberFormat _currencyCompact;
   final NumberFormat _currencySimple;
@@ -50,56 +50,49 @@ class Currency {
       decimalDigits: decimalDigits,
     );
 
-    _instance = _instance ??
-        Currency._internal(
-            currency, currencyCompact, currencySimple, currencyCompactSimple);
+    _instance = Currency._internal(
+        currency, currencyCompact, currencySimple, currencyCompactSimple);
   }
 
-  static void _checkInstance() {
+  static Currency _getInstance() {
     assert(
       _instance != null,
       '\nEnsure to initialize Currency before accessing it.'
       '\nPlease execute the init method : Currency.init()',
     );
+
+    return _instance!;
   }
 
   static String format(num number) {
-    _checkInstance();
-    return _instance!._currency.format(number);
+    return _getInstance()._currency.format(number);
   }
 
   static String formatCompact(num number) {
-    _checkInstance();
-    return _instance!._currencyCompact.format(number);
+    return _getInstance()._currencyCompact.format(number);
   }
 
   static String formatSimple(num number) {
-    _checkInstance();
-    return _instance!._currencySimple.format(number);
+    return _getInstance()._currencySimple.format(number);
   }
 
   static String formatCompactSimple(num number) {
-    _checkInstance();
-    return _instance!._currencyCompactSimple.format(number);
+    return _getInstance()._currencyCompactSimple.format(number);
   }
 
   static num parse(String value) {
-    _checkInstance();
-    return _instance!._currency.parse(value);
+    return _getInstance()._currency.parse(value);
   }
 
   static num parseCompact(String value) {
-    _checkInstance();
-    return _instance!._currencyCompact.parse(value);
+    return _getInstance()._currencyCompact.parse(value);
   }
 
   static num parseSimple(String value) {
-    _checkInstance();
-    return _instance!._currencySimple.parse(value);
+    return _getInstance()._currencySimple.parse(value);
   }
 
   static num parseCompactSimple(String value) {
-    _checkInstance();
-    return _instance!._currencyCompactSimple.parse(value);
+    return _getInstance()._currencyCompactSimple.parse(value);
   }
 }
