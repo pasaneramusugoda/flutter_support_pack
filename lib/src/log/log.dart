@@ -67,9 +67,9 @@ class Log {
   /// [references] more event references such as\n method name or function name for further identification
   static void i(String tag, String msg, {List<String>? references}) {
     final ref = references != null && references.isNotEmpty
-        ? ': ${references.join(' => ')}'
+        ? ' : ${references.join(' => ')}'
         : '';
-    final name = '🤠 INFO: $tag $ref';
+    final name = 'INFO: $tag$ref';
     _log(name, msg);
   }
 
@@ -80,9 +80,9 @@ class Log {
   /// [references] more event references such as\n method name or function name for further identification
   static void d(String tag, String msg, {List<String>? references}) async {
     final ref = references != null && references.isNotEmpty
-        ? ': ${references.join(' => ')}'
+        ? ' : ${references.join(' => ')}'
         : '';
-    final name = '🚧 DEBUG: $tag $ref';
+    final name = 'DEBUG: $tag$ref';
     _log(name, msg);
   }
 
@@ -96,9 +96,9 @@ class Log {
   static void w(String tag, String msg,
       {List<String>? references, exception, StackTrace? stackTrace}) async {
     final ref = references != null && references.isNotEmpty
-        ? ': ${references.join(' => ')}'
+        ? ' : ${references.join(' => ')}'
         : '';
-    final name = '❗ WARN: $tag $ref';
+    final name = 'WARN: $tag$ref';
     _log(name, msg, exception: exception, stackTrace: stackTrace);
   }
 
@@ -112,11 +112,14 @@ class Log {
   static void e(String tag, String msg,
       {List<String>? references, exception, StackTrace? stackTrace}) async {
     final ref = references != null && references.isNotEmpty
-        ? ': ${references.join(' => ')}'
+        ? ' : ${references.join(' => ')}'
         : '';
-    final name = '🚨 ERROR: $tag $ref';
+    final name = 'ERROR: $tag$ref';
     _log(name, msg, exception: exception, stackTrace: stackTrace);
   }
+
+  static Future<void> setFirebaseCustomKey(String key, Object value) =>
+      FirebaseCrashlytics.instance.setCustomKey(key, value);
 
   static void _log(String name, String msg,
       {exception, StackTrace? stackTrace}) async {
