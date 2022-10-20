@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0] - 2022/10/20
+
+### BREAKING CHANGES
+
+- Upgrade firebase_core version to 2.0.0
+- Upgrade firebase_crashlytics version to 3.0.1
+
+### Updates
+
+- Add new extensions for double and list
+- Log comment update
+
+
 ## [1.0.1] - 2022/05/29
 
 ### Updates
