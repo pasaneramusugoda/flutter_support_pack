@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1] - 2022/12/20
+
+### Updates
+
+- Export NumberFormatter class
+
+
 ## [1.2.0] - 2022/12/20
 
 ### BREAKING CHANGES
