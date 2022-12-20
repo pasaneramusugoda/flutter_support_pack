@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0] - 2022/12/20
+
+### BREAKING CHANGES
+
+- Upgrade firebase_core version to 2.4.0
+- Upgrade firebase_crashlytics version to 3.0.7
+- Upgrade intl version to 0.18.0
+
+### Updates
+
+- Add number formatter for numbers
+
+
 ## [1.1.0] - 2022/10/20
 
 ### BREAKING CHANGES
