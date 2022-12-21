@@ -1,6 +1,6 @@
 name: flutter_support_pack
 description: Commanly used features in on package to reduce number of imports and dependancy issues
-version: 1.2.1
+version: 1.2.2
 homepage: https://github.com/pasaneramusugoda/flutter_support_pack
 
 environment:

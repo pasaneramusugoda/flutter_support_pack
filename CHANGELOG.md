@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2] - 2022/12/21
+
+### Updates
+
+- Parse string by NumberFormatter
+
+
 ## [1.2.1] - 2022/12/20
 
 ### Updates
