@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.3] - 2022/12/22
+
+### Updates
+
+- Return NumberFormat
+
 ## [1.2.2] - 2022/12/21
 
 ### Updates

@@ -23,6 +23,8 @@ class NumberFormatter {
     return _instance!;
   }
 
+  NumberFormat get formatter => _formatter;
+
   static String format(num value) => _getInstance()._formatter.format(value);
 
   static num parse(String value) => _getInstance()._formatter.parse(value);
