@@ -20,12 +20,14 @@ import 'package:flutter/foundation.dart';
 class Log {
   static Log? _instance;
   final bool _logInDebugMode;
+  final bool _logInProfileMode;
   final bool _logInReleaseMode;
   final bool _enableFirebaseCrashlyticsInDebug;
   final bool _enableFirebaseCrashlyticsInRelease;
 
   Log._internal(
       this._logInDebugMode,
+      this._logInProfileMode,
       this._logInReleaseMode,
       this._enableFirebaseCrashlyticsInDebug,
       this._enableFirebaseCrashlyticsInRelease) {
@@ -40,6 +42,7 @@ class Log {
   /// [enableFirebaseCrashlyticsInRelease] Enable Firebase Crashlytics logging in release mode ([kReleaseMode]).\nDefault value is false.
   static void init({
     bool logInDebugMode = true,
+    bool logInProfileMode = true,
     bool logInReleaseMode = false,
     bool enableFirebaseCrashlyticsInDebug = false,
     bool enableFirebaseCrashlyticsInRelease = false,
@@ -47,6 +50,7 @@ class Log {
     _instance = _instance ??
         Log._internal(
             logInDebugMode,
+            logInProfileMode,
             logInReleaseMode,
             enableFirebaseCrashlyticsInDebug,
             enableFirebaseCrashlyticsInRelease);
@@ -126,6 +130,7 @@ class Log {
     _checkInstance();
 
     if ((_instance!._logInDebugMode && kDebugMode) ||
+        (_instance!._logInProfileMode && kProfileMode) ||
         (_instance!._logInReleaseMode && kReleaseMode)) {
       developer.log(msg, name: name, error: exception, stackTrace: stackTrace);
     }
