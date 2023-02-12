@@ -1,143 +1,173 @@
-# Changelog
 
-## [1.2.3] - 2022/12/22
+<a name="v1.2.4"></a>
+## [v1.2.4](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v1.2.5...v1.2.4) (2023-01-27)
 
-### Updates
+### Build
 
-- Return NumberFormat
-
-## [1.2.2] - 2022/12/21
-
-### Updates
-
-- Parse string by NumberFormatter
+* new version with library updates
 
 
-## [1.2.1] - 2022/12/20
+<a name="v1.2.5"></a>
+## [v1.2.5](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v1.2.3...v1.2.5) (2023-01-27)
 
-### Updates
+### Build
 
-- Export NumberFormatter class
+* new version with library updates
 
+### Refactor
 
-## [1.2.0] - 2022/12/20
-
-### BREAKING CHANGES
-
-- Upgrade firebase_core version to 2.4.0
-- Upgrade firebase_crashlytics version to 3.0.7
-- Upgrade intl version to 0.18.0
-
-### Updates
-
-- Add number formatter for numbers
+* **Log:** Add profile mode logging control
 
 
-## [1.1.0] - 2022/10/20
+<a name="v1.2.3"></a>
+## [v1.2.3](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v1.2.2...v1.2.3) (2022-12-21)
 
-### BREAKING CHANGES
+### Build
 
-- Upgrade firebase_core version to 2.0.0
-- Upgrade firebase_crashlytics version to 3.0.1
+* new version
 
-### Updates
+### Refactor
 
-- Add new extensions for double and list
-- Log comment update
+* library update
 
 
-## [1.0.1] - 2022/05/29
+<a name="v1.2.2"></a>
+## [v1.2.2](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v1.2.1...v1.2.2) (2022-12-21)
 
-### Updates
+### Build
 
-- Handled existing functions for NULL Strings
+* new version
 
-## [1.0.0] - 2022/05/24
 
-### BREAKING CHANGES
+<a name="v1.2.1"></a>
+## [v1.2.1](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v1.2.0...v1.2.1) (2022-12-20)
 
-- Upgrade Flutter version to 3.0.0
-- Upgrade Dart version to 2.17.0
+### Build
 
-### Updates
+* new version
 
-- String can now parse to date directly
-- DateTime formatter default separator is a space(" ")
-- Android Studio Live Template settings to optimize coding for logs
 
-## [0.1.3] - 2021/05/23
+<a name="v1.2.0"></a>
+## [v1.2.0](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v1.1.0...v1.2.0) (2022-12-20)
 
-* updates Introduced another param to Date formatter
+### Build
 
-## [0.1.2+7] - 2021/05/23
+* new version
 
-* updates Added Date formatter
 
-## [0.1.1+6] - 2021/05/23
+<a name="v1.1.0"></a>
+## [v1.1.0](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v1.0.1...v1.1.0) (2022-10-20)
 
-* fix Null safety fixes
+### Build
 
-## [0.1.0] - 2021/05/22
+* new version
 
-* updates
-Library version updates and null safety
+### Feature
 
-## [0.0.5+4] - 2021/03/03
+* **Extensions:** Add two new extensions
 
-* fix
-Library version fix
+### Refactor
 
-## [0.0.5+3] - 2021/03/03
+* **Logs:** Update log comment
 
-* fix
-Library version fix
 
-## [0.0.5+2] - 2021/03/03
+<a name="v1.0.1"></a>
+## [v1.0.1](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v1.0.0...v1.0.1) (2022-05-29)
 
-* fix
-Log error fix
-Library updates
+### Build
 
-## [0.0.5+1] - 2020/12/18
+* new version
 
-* fix
-Forgot to export :)
+### Refactor
 
-## [0.0.5] - 2020/12/18
+* formatting
+* **currency:** clean up
+* **datetime:** formatting
+* **string:** handled for null string
 
-* updates
-Number and string extensions on currency or numbers
-Added numbers only validation to pin code validator
-An extension for string to get color from hex value
-Documentation updates
 
-## [0.0.4] - 2020/11/25
+<a name="v1.0.0"></a>
+## [v1.0.0](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.1.3...v1.0.0) (2022-05-24)
 
-* updates
-Currency class added
+### Build
 
-## [0.0.3] - 2020/11/25
+* library updates
 
-* updates
-Validators class added
+### Docs
 
-## [0.0.2+1] - 2020/11/25
+* add live template configuration and doc update
 
-* fixes
-Package referencing fixes
+### Refactor
 
-## [0.0.2] - 2020/11/25
+* **date_time:** set " " as default separator with document update
+* **string:** add dateTime parser
 
-* updates
-Structural update
-Documentation update
+### BREAKING CHANGE
 
-## [0.0.1+1] - 2020/11/25
 
-* fixes
-Package referencing fix
+Flutter version upgrade to 3.0.0
 
-## [0.0.1] - 2020/11/24
 
-* initial release
-Including first sub package Log
+<a name="v0.1.3"></a>
+## [v0.1.3](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.1.2+7...v0.1.3) (2021-05-23)
+
+
+<a name="v0.1.2+7"></a>
+## [v0.1.2+7](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.1.1+6...v0.1.2+7) (2021-05-23)
+
+
+<a name="v0.1.1+6"></a>
+## [v0.1.1+6](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.1.0...v0.1.1+6) (2021-05-23)
+
+
+<a name="v0.1.0"></a>
+## [v0.1.0](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.0.6+5...v0.1.0) (2021-05-22)
+
+
+<a name="v0.0.6+5"></a>
+## [v0.0.6+5](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.0.5+4...v0.0.6+5) (2021-04-25)
+
+
+<a name="v0.0.5+4"></a>
+## [v0.0.5+4](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.0.5+3...v0.0.5+4) (2021-03-21)
+
+
+<a name="v0.0.5+3"></a>
+## [v0.0.5+3](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.0.5+2...v0.0.5+3) (2021-03-03)
+
+
+<a name="v0.0.5+2"></a>
+## [v0.0.5+2](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.0.5+1...v0.0.5+2) (2021-03-03)
+
+
+<a name="v0.0.5+1"></a>
+## [v0.0.5+1](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.0.5...v0.0.5+1) (2020-12-18)
+
+
+<a name="v0.0.5"></a>
+## [v0.0.5](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.0.4...v0.0.5) (2020-12-18)
+
+
+<a name="v0.0.4"></a>
+## [v0.0.4](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.0.3...v0.0.4) (2020-11-25)
+
+
+<a name="v0.0.3"></a>
+## [v0.0.3](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.0.2+1...v0.0.3) (2020-11-25)
+
+
+<a name="v0.0.2+1"></a>
+## [v0.0.2+1](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.0.2...v0.0.2+1) (2020-11-25)
+
+
+<a name="v0.0.2"></a>
+## [v0.0.2](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.0.1+1...v0.0.2) (2020-11-25)
+
+
+<a name="v0.0.1+1"></a>
+## [v0.0.1+1](https://github.com/pasaneramusugoda/flutter_support_pack/compare/v0.0.1...v0.0.1+1) (2020-11-25)
+
+
+<a name="v0.0.1"></a>
+## v0.0.1 (2020-11-24)
+

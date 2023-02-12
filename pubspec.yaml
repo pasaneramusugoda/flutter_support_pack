@@ -18,4 +18,5 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-flutter:
+scripts:
+  gen_change_log: git-chglog -o CHANGELOG.md
